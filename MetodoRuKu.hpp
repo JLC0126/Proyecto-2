@@ -7,8 +7,8 @@ class MetodoRuKu : public MetodosNumericos
 public:
     MetodoRuKu(const double, const double, const double, const double);
 
-    double MetodoRuKu1();
-    double getMetodoRuKu1();
+    const double MetodoRuKu2() const;
+    const double getMetodoRuKu2() const;
 };
 
 #endif
