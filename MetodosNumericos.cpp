@@ -29,3 +29,8 @@ double MetodosNumericos::get_h() const
 {
     return h;
 }
+
+const double MetodosNumericos::ResolucionNumerica2() const{
+    cout<<"Metodos Numericos "<<endl;
+
+}
