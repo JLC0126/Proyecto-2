@@ -9,7 +9,7 @@ public:
 	MetodoEuler(const double, const double, const double, const double);
 	~MetodoEuler();
 
-	const double ResolucionNUmerica() const;
+	const double ResolucionNumerica() const;
 
 	const double ResolucionNumerica2() const;
 

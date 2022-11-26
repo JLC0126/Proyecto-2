@@ -8,6 +8,8 @@ public:
     MetodoRKT(const double, const double, const double, const double);
 
     const double ResolucionNumerica() const;
+    const double ResolucionNumerica2() const;
+    const double getMetodoRKT2() const;
     const double getMetodoRKT4() const;
 
     ~MetodoRKT();

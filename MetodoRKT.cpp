@@ -21,7 +21,10 @@ const double MetodoRKT::ResolucionNumerica() const
     _Xf = this->getX_f();
     _h = this->get_h();
     cout << "Runge-Kutta 4to orden" << endl;
-    cout << setw(15) << "X" << setw(15) << "Y" << setw(15) << "k1" << setw(15) << "c1" << setw(15) << "c2" << setw(15) << "k2" << setw(15) << "c3" << setw(15) << "c4" << setw(15) << "k3" << setw(15) << "c5" << setw(15) << "c6" << setw(15) << "k4" << endl;
+    cout << setw(10) << "X" << setw(10) << "Y" << setw(10) << "k1" << setw(5) << "c1" << setw(10) << "c2" << setw(10) << "k2" << setw(5) << "c3" << setw(10) << "c4" << setw(10) << "k3" << setw(5) << "c5" << setw(10) << "c6" << setw(10) << "k4" << endl;
+    
+    cout.precision(4);
+    
     for (int i = _Xo; _Xo <= _Xf; _Xo += _h)
     {
         _f = (-20 * _Yo) + (7 * (pow(e, -0.5 * _Xo)));
@@ -35,15 +38,47 @@ const double MetodoRKT::ResolucionNumerica() const
         c5 = _Xo + _h;
         c6 = _Yo + (k3 * _h);
         k4 = ((-20 * c6) + (7 * (pow(e, -0.5 * c5))));
-        cout << setw(15) << _Xo << setw(15) << _Yo << setw(15) << k1 << setw(15) << c1 << setw(15) << c2 << setw(15) << k2 << setw(15) << c3 << setw(15) << c4 << setw(15) << k3 << setw(15) << c5 << setw(15) << c6 << setw(15) << k4 << endl;
+        cout << setw(10) << _Xo << setw(10) << _Yo << setw(10) << k1 << setw(5) << c1 << setw(10) << c2 << setw(10) << k2 << setw(5) << c3 << setw(10) << c4 << setw(10) << k3 << setw(5) << c5 << setw(10) << c6 << setw(10) << k4 << endl;
         _Yo = _Yo + ((_h / 6) * (k1 + (2 * k2) + (2 * k3) + k4));
     }
     cout << endl;
+    //return 0.0;
+}
+
+const double MetodoRKT::ResolucionNumerica2() const
+{
+    double e = 2.71828, c1, c2, _Xf, _Xo, _f = 0.0, _Yo, _h, k1, k2;
+    _Xo = this->getX_0();
+    _Yo = this->getY_0();
+    _Xf = this->getX_f();
+    _h = this->get_h();
+    cout << "Runge-Kutta 2do orden" << endl;
+    cout << setw(10) << "X" << setw(10) << "Y" << setw(10) << "k1" << setw(10) << "c1" << setw(10) << "c2" << setw(10) << "k2" << endl;
+    
+    cout.precision(4);
+    
+    for (int i = _Xo; _Xo <= _Xf; _Xo += _h)
+    {
+        _f = (-20 * _Yo) + (7 * (pow(e, -0.5 * _Xo)));
+        k1 = _f * _h;
+        c1 = (_Xo + _h);
+        c2 = (_Yo + k1);
+        k2 = _h * ((-20 * c2) + (7 * (pow(e, -0.5 * c1))));
+        cout << setw(10) << _Xo << setw(10) << _Yo << setw(10) << k1 << setw(10) << c1 << setw(10) << c2 << setw(10) << k2 << endl;
+        _Yo = _Yo + (((k1 + k2) / 2));
+    }
+    cout << endl;
+    return _Yo;
 }
 
 const double MetodoRKT::getMetodoRKT4() const
 {
     return MetodoRKT::ResolucionNumerica();
+}
+
+const double MetodoRKT::getMetodoRKT2() const
+{
+    return MetodoRKT::ResolucionNumerica2();
 }
 
 MetodoRKT::~MetodoRKT()

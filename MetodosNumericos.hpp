@@ -4,7 +4,8 @@
 class MetodosNumericos // Clase base abstracta
 {
 public:
-	MetodosNumericos(double, double, double, double);
+	MetodosNumericos(double, double, double, double);//constructor para solucion de EDO's
+	MetodosNumericos(double, double);//constructor para raices de polinomios
 
 	double getX_0() const;
 
