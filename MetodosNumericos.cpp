@@ -10,6 +10,12 @@ MetodosNumericos::MetodosNumericos(double x_0, double y_0, double x_f, double h)
     this->h = h;
 }
 
+MetodosNumericos::MetodosNumericos(double x_0,double x_f)
+{
+    this->x_0=x_0;
+    this->x_f=x_f;
+}
+
 double MetodosNumericos::getX_0() const
 {
     return x_0;
