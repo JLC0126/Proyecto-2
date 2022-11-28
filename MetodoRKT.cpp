@@ -27,7 +27,7 @@ const double MetodoRKT::ResolucionNumerica() const
     
     for (int i = _Xo; _Xo <= _Xf; _Xo += _h)
     {
-        _f = (-20 * _Yo) + (7 * (pow(e, -0.5 * _Xo)));
+        _f = _Yo - pow(_Xo ,2) +1;
         k1 = _f;
         c1 = _Xo + (_h / 2);
         c2 = _Yo + (k1 * _h / 2);
@@ -42,7 +42,7 @@ const double MetodoRKT::ResolucionNumerica() const
         _Yo = _Yo + ((_h / 6) * (k1 + (2 * k2) + (2 * k3) + k4));
     }
     cout << endl;
-    //return 0.0;
+    return _Yo;
 }
 
 const double MetodoRKT::ResolucionNumerica2() const
@@ -59,7 +59,7 @@ const double MetodoRKT::ResolucionNumerica2() const
     
     for (int i = _Xo; _Xo <= _Xf; _Xo += _h)
     {
-        _f = (-20 * _Yo) + (7 * (pow(e, -0.5 * _Xo)));
+        _f = _Yo - pow(_Xo ,2) +1;
         k1 = _f * _h;
         c1 = (_Xo + _h);
         c2 = (_Yo + k1);

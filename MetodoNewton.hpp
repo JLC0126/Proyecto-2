@@ -4,6 +4,10 @@
 #include"MetodosNumericos.hpp"
 
 class MetodoNewton: public MetodosNumericos{
+
+
+    friend double funcion(double );
+    friend double fprima(double );
     public:
         MetodoNewton(const double,const double, const double);
         ~MetodoNewton();

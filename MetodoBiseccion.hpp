@@ -6,6 +6,7 @@
 
 class MetodoBiseccion: public MetodosNumericos{
 
+    friend double f(double );
     public:
         MetodoBiseccion(const double,const double, const double);
         ~MetodoBiseccion();
