@@ -24,7 +24,7 @@ int main()
     cout << "2. Metodo Euler " << endl;
     cout << "3. Metodo Euler Mejorado " << endl;
     cout << "4. Metodo de Biseccion " << endl;
-    cout << "5. Metodo de Newton";
+    cout << "5. Metodo de Newton"<<endl;
     
     cin >> r;
 
@@ -32,7 +32,7 @@ int main()
     switch(r)
     {
     case 1:
-        {cout << "\n Ingrese el Xo inicial: ";
+        {cout << "\n Ingrese el Xo inicial: "; //[0,2], y(0)=0.5, h=0.2
         cin >> _Xo;
         cout << "\n Ingrese Yo inicial: ";
         cin >> _Yo;
@@ -46,7 +46,7 @@ int main()
         RK.~MetodoRKT();}
         break;
     case 2:
-        {cout << "\n Ingrese el Xo inicial: ";
+        {cout << "\n Ingrese el Xo inicial: "; //[0,2], y(0)=0.5, h=0.5
         cin >> _Xo;
         cout << "\n Ingrese Yo inicial: ";
         cin >> _Yo;
@@ -60,7 +60,7 @@ int main()
         E.~MetodoEuler();}
         break;
     case 3:
-        {cout << "\n Ingrese el Xo inicial: ";
+        {cout << "\n Ingrese el Xo inicial: "; //[0,2], y(0)=0.5, h=0.5
         cin >> _Xo;
         cout << "\n Ingrese Yo inicial: ";
         cin >> _Yo;
@@ -74,24 +74,24 @@ int main()
         E.~MetodoEuler();}
         break;
     case 4:
-        {cout << "\n Ingrese el limite inferior: ";
+        {cout << "\n Ingrese el limite inferior: "; //[1,2] 
         cin >> _Xo;
         cout << "\n Ingrese el limite superior: ";
         cin >> _Xf;
         cout << "\n Ingrese la tolerancia,  por ejemplo 0.001:  ";
         cin >> tol;
-        MetodoBiseccion Mb(_Xo,_Yo,tol);
+        MetodoBiseccion Mb(_Xo,_Xf,tol);
         cout<<Mb.get_MetodoBiseccion()<<endl;
         Mb.~MetodoBiseccion();}
         break;
     case 5:
-        {cout << "\n Ingrese el limite inferior: ";
+        {cout << "\n Ingrese el limite inferior: "; //Po= pi/4 aprox. 0.785398
         cin >> _Xo;
         cout << "\n Ingrese el limite superior: ";
         cin >> _Xf;
         cout << "\n Ingrese la tolerancia,  por ejemplo 0.001:  ";
         cin >> tol;
-        MetodoNewton Mn(_Xo,_Yo,tol);
+        MetodoNewton Mn(_Xo,_Xf,tol);
         cout<<Mn.get_MetodoNewton()<<endl;
         Mn.~MetodoNewton();}
         break;

@@ -25,11 +25,11 @@ MetodoNewton::~MetodoNewton()
 {}
 
 double funcion(double x){
-    return pow(x,3)+4*pow(x,2)-10;
+    return cos(x)-x;
 }
 
 double fprima(double x){
-    return 3*pow(x,2)+8*x;
+    return -1*sin(x)-1;
 }
 
 MetodoNewton::MetodoNewton(const double X_0,const double X_f, const double Tol):MetodosNumericos(X_0,X_f){
@@ -38,7 +38,7 @@ MetodoNewton::MetodoNewton(const double X_0,const double X_f, const double Tol):
 
 const double MetodoNewton::ResolucionNumerica() const
 {
-    int iteraciones=50;
+    int iteraciones=150;
     double  _Xo, _Xf, tol,f1,f2,fp1, fp2, Ea;
     _Xo = this->getX_0();
     _Xf = this->getX_f();
@@ -68,7 +68,7 @@ const double MetodoNewton::ResolucionNumerica() const
         if(Ea<tol)
         {
             cout<<"El metodo converge en "<<contador<<" iteraciones"<<endl;
-            cout<<"Raiz :"<<_Xf;
+            cout<<"Raiz :\n";
             break;
         }
     }
@@ -77,6 +77,8 @@ const double MetodoNewton::ResolucionNumerica() const
     {
         cout<<"El metodo no converge, se necesitan mas iteraciones"<<endl;
     }
+    
+    return _Xf;
 
 }
 

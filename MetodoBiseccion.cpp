@@ -45,10 +45,9 @@ const double MetodoBiseccion::ResolucionNumerica() const
     /*
     en main.cpp MetodoBiseccion Mb(xi, xf, tolerancia);
     */
-    int contador=1, iteraciones=50;
-    double  _Xo, _Xf, pm1,pm2, _Yo, tol,fa,fb,fpm1, fpm2, Ea;
+    int contador=1, iteraciones=150;
+    double  _Xo, _Xf, pm1,pm2, tol,fa,fb,fpm1, fpm2, Ea;
     _Xo = this->getX_0();
-    _Yo = this->getY_0();
     _Xf = this->getX_f();
     tol = this->get_tolerancia();
     pm1=this->get_puntoMedio();
@@ -95,12 +94,13 @@ const double MetodoBiseccion::ResolucionNumerica() const
 
     if(contador<=iteraciones)
     {
-        cout<<"El metodo converge a "<<iteraciones<<" iteraciones "<<endl;
-        cout<<pm2;
+        cout<<"El metodo converge a "<<contador<<" iteraciones "<<endl;
+        cout<<"Raiz: ";
     }
+    return pm2;
     
 }
 
 const double MetodoBiseccion::get_MetodoBiseccion() const{
-    return MetodosNumericos::ResolucionNumerica();
+    return MetodoBiseccion::ResolucionNumerica();
 }
