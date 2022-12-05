@@ -7,12 +7,16 @@ class MetodoRKT : public MetodosNumericos
 public:
     MetodoRKT(const double, const double, const double, const double);
 
-    const double ResolucionNumerica() const;
-    const double ResolucionNumerica2() const;
-    const double getMetodoRKT2() const;
-    const double getMetodoRKT4() const;
+    const double Solver() const;
+
+    const double getMetodoRKT() const;
+
+    const int getOrden() const;
 
     ~MetodoRKT();
+
+private:
+    int orden;    
 };
 
 #endif

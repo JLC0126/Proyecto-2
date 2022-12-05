@@ -6,15 +6,11 @@
 class MetodoEuler : public MetodosNumericos
 {
 public:
-	MetodoEuler(const double, const double, const double, const double);
+	MetodoEuler(const double, const double, const double);
 	~MetodoEuler();
 
-	const double ResolucionNumerica() const;
-
-	const double ResolucionNumerica2() const;
+	const double Solver() const;
 
 	const double getMetodoEuler() const;
-
-	const double getMetodoEulerMejorado() const;
 };
 #endif
